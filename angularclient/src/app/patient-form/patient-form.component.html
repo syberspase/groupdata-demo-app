@@ -1,0 +1,13 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #recordForm="ngForm">
+        <div class="form-group">
+          <label for="name">Record</label>
+          <input type="text" [(ngModel)]="patientRecord.record" 
+            class="form-control" id="record" name="record" placeholder="Add new record"
+            required #name="ngModel">
+        </div>
+        <button type="submit" [disabled]="!recordForm.form.valid" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+</div>
