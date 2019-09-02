@@ -22,6 +22,8 @@ public abstract class Record {
     protected Map<String, String> parse(String optionalKey) {
         Map<String, String> props = new HashMap<>();
         String[] fields = rawValue.split(regexDelim);
+        if (keys.length != fields.length+1 && keys.length != fields.length)
+            throw new RuntimeException("Malformed keys or raw input string.");
         boolean hasOptionalValue = fields.length == keys.length ? true : false;
 
         // Iterate keys in the order they are declared
